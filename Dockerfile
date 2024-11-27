@@ -21,6 +21,10 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 
+RUN export http_proxy=http://192.168.3.63:7890
+
+RUN export https_proxy=http://192.168.3.63:7890
+
 RUN npm install --global gulp-cli
 
 RUN npm install
